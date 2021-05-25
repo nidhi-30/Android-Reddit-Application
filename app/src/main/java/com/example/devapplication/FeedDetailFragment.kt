@@ -1,22 +1,20 @@
 package com.example.devapplication
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.devapplication.databinding.FragmentVehicleDetailBinding
+import com.example.devapplication.databinding.FragmentFeedDetailBinding
 import com.example.devapplication.models.FeedDetail
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class VehicleDetailFragment : Fragment() {
+class FeedDetailFragment : Fragment() {
 
-    private var _binding: FragmentVehicleDetailBinding? = null
+    private var _binding: FragmentFeedDetailBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,7 +26,7 @@ class VehicleDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentVehicleDetailBinding.inflate(inflater, container, false)
+        _binding = FragmentFeedDetailBinding.inflate(inflater, container, false)
 
         val bundle = this.arguments
         if (bundle != null){

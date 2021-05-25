@@ -52,10 +52,10 @@ class FeedFragment : Fragment(), FeedAdapter.OnItemClickListener{
         binding.itemsswipetorefresh.setProgressBackgroundColorSchemeColor(ContextCompat.getColor(view.context, R.color.red_200))
         binding.itemsswipetorefresh.setColorSchemeColors(Color.WHITE)
         binding.itemsswipetorefresh.setOnRefreshListener {
-            Handler().postDelayed(Runnable {
+//            Handler().postDelayed(Runnable {
                 loadData()
                 binding.itemsswipetorefresh.isRefreshing = false
-            }, 2000)
+//            }, 2000)
         }
 
         viewModel = ViewModelProvider(this, FeedViewModelFactory(FeedRepository(feedService))).get(FeedViewModel::class.java)
@@ -91,10 +91,8 @@ class FeedFragment : Fragment(), FeedAdapter.OnItemClickListener{
     override fun onItemClick(position: Int) {
         val clickedFeed = feedList?.get(position)
 
-        val feedFragment = FeedFragment()
         val bundle = Bundle()
         bundle.putParcelable("feed", clickedFeed)
-        feedFragment.arguments = bundle
 
 //        Toast.makeText(this.context, "$bundle", Toast.LENGTH_SHORT).show()
 
